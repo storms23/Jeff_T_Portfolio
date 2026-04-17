@@ -92,9 +92,11 @@ const Contact = () => {
     try {
       await emailjs.send(
         "service_urnytf3",
-        "template_txynxj4",
+        "template_nczmged",
         {
           ...formData,
+          title: "Portfolio Contact",
+          time: new Date().toLocaleString(),
           to_name: CONTACT_INFO.name,
           to_email: CONTACT_INFO.email,
           reply_to: formData.email,
