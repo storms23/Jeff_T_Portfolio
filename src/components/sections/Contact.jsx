@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Mail } from "lucide-react";
 import emailjs from "@emailjs/browser";
@@ -27,6 +27,9 @@ const Contact = () => {
   const [showWelcomeModal, setShowWelcomeModal] = useState(false);
   const [hasShownWelcome, setHasShownWelcome] = useState(false);
   const [sending, setSending] = useState(false);
+  const welcomeOpenTimeoutRef = useRef(null);
+  const welcomeAutoCloseTimeoutRef = useRef(null);
+  const hasScheduledWelcomeRef = useRef(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -37,23 +40,48 @@ const Contact = () => {
     if (hasShownWelcome) return;
     const section = document.getElementById("contact");
     if (!section) return;
+
+    hasScheduledWelcomeRef.current = false;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
+          if (hasScheduledWelcomeRef.current) return;
+          hasScheduledWelcomeRef.current = true;
           observer.disconnect();
-          const t = setTimeout(() => {
+          welcomeOpenTimeoutRef.current = window.setTimeout(() => {
             setShowWelcomeModal(true);
             setHasShownWelcome(true);
-            setTimeout(() => setShowWelcomeModal(false), 10000);
+            welcomeAutoCloseTimeoutRef.current = window.setTimeout(
+              () => setShowWelcomeModal(false),
+              10000,
+            );
           }, 1500);
-          return () => clearTimeout(t);
         }
       },
       { threshold: 0.2 },
     );
     observer.observe(section);
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      if (welcomeOpenTimeoutRef.current) {
+        clearTimeout(welcomeOpenTimeoutRef.current);
+        welcomeOpenTimeoutRef.current = null;
+      }
+      if (welcomeAutoCloseTimeoutRef.current) {
+        clearTimeout(welcomeAutoCloseTimeoutRef.current);
+        welcomeAutoCloseTimeoutRef.current = null;
+      }
+    };
   }, [hasShownWelcome]);
+
+  const handleCloseWelcomeModal = () => {
+    setShowWelcomeModal(false);
+    if (welcomeAutoCloseTimeoutRef.current) {
+      clearTimeout(welcomeAutoCloseTimeoutRef.current);
+      welcomeAutoCloseTimeoutRef.current = null;
+    }
+  };
 
   const handleChange = (e) =>
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -295,7 +323,7 @@ const Contact = () => {
       </div>
       <Modal
         isOpen={showWelcomeModal}
-        onClose={() => setShowWelcomeModal(false)}
+        onClose={handleCloseWelcomeModal}
         icon={Mail}
         title="Let's Connect! 💬"
         message="Feel free to send me a message! I'd love to hear from you and discuss your ideas or projects."
