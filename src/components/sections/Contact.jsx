@@ -98,15 +98,21 @@ const Contact = () => {
           to_name: CONTACT_INFO.name,
           to_email: CONTACT_INFO.email,
           reply_to: formData.email,
+          from_name: formData.name,
+          from_email: formData.email,
         },
         "fwogvtryMu6G95Tlm",
       );
       setShowSuccessModal(true);
       setFormData({ name: "", email: "", message: "" });
       setTimeout(() => setShowSuccessModal(false), 10000);
-    } catch {
+    } catch (error) {
+      const details =
+        typeof error?.text === "string" && error.text.trim()
+          ? ` (${error.text})`
+          : "";
       alert(
-        `Failed to send message. Please try again or email me directly at ${CONTACT_INFO.email}`,
+        `Failed to send message${details}. Please try again or email me directly at ${CONTACT_INFO.email}`,
       );
     } finally {
       setSending(false);
