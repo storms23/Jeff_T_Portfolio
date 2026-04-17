@@ -1,8 +1,7 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Mail } from "lucide-react";
 import emailjs from "@emailjs/browser";
-import ReCAPTCHA from "react-google-recaptcha";
 import { GridSubtle, OrbsContact } from "../ui/Backgrounds";
 import Modal from "../ui/Modal";
 import CopyEmailButton from "../ui/CopyEmailButton";
@@ -17,24 +16,22 @@ import { SOCIAL_LINKS } from "../../data/socials";
 // ─── Contact ─────────────────────────────────────────────────────────────────
 const CONTACT_INFO = {
   name: "Jefferson Tuparan",
-  email: "jeffersontuparanst@gmail.com",
+  email: "jeffersontuparan@gmail.com",
   github: "https://github.com/storms23",
   location: "Valenzuela City",
   phone: "09760529311",
 };
 
-const Contact = ({ theme = "dark" }) => {
+const Contact = () => {
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [showWelcomeModal, setShowWelcomeModal] = useState(false);
   const [hasShownWelcome, setHasShownWelcome] = useState(false);
   const [sending, setSending] = useState(false);
-  const [captchaValue, setCaptchaValue] = useState(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
-  const recaptchaRef = useRef(null);
 
   useEffect(() => {
     if (hasShownWelcome) return;
@@ -63,29 +60,26 @@ const Contact = ({ theme = "dark" }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!captchaValue) {
-      alert("Please complete the reCAPTCHA verification");
-      return;
-    }
     setSending(true);
     try {
       await emailjs.send(
         "service_urnytf3",
         "template_txynxj4",
-        { ...formData, "g-recaptcha-response": captchaValue },
+        {
+          ...formData,
+          to_name: CONTACT_INFO.name,
+          to_email: CONTACT_INFO.email,
+          reply_to: formData.email,
+        },
         "fwogvtryMu6G95Tlm",
       );
       setShowSuccessModal(true);
       setFormData({ name: "", email: "", message: "" });
-      setCaptchaValue(null);
-      recaptchaRef.current?.reset();
       setTimeout(() => setShowSuccessModal(false), 10000);
     } catch {
       alert(
-        "Failed to send message. Please try again or email me directly at jeffersontuparanst@gmail.com",
+        `Failed to send message. Please try again or email me directly at ${CONTACT_INFO.email}`,
       );
-      recaptchaRef.current?.reset();
-      setCaptchaValue(null);
     } finally {
       setSending(false);
     }
@@ -270,26 +264,9 @@ const Contact = ({ theme = "dark" }) => {
                     className={`${inputClass} resize-none`}
                   />
                 </div>
-                <div className="flex justify-center overflow-hidden">
-                  <div
-                    className="transform origin-top"
-                    style={{
-                      transform:
-                        "scale(clamp(0.77, calc((100vw - 64px) / 304px), 1))",
-                      transformOrigin: "center top",
-                    }}
-                  >
-                    <ReCAPTCHA
-                      ref={recaptchaRef}
-                      sitekey="6LfeiEQsAAAAAIqv1VhkNRnaGRRxmRpt7FO4XCmn"
-                      onChange={setCaptchaValue}
-                      theme={theme}
-                    />
-                  </div>
-                </div>
                 <button
                   type="submit"
-                  disabled={sending || !captchaValue}
+                  disabled={sending}
                   className={BTN_SUBMIT}
                 >
                   {sending ? "Sending..." : "Send Message"}

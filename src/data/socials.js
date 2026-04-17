@@ -3,7 +3,7 @@ import { Mail, Github } from "lucide-react";
 export const SOCIAL_LINKS = [
   {
     Icon: Mail,
-    url: "mailto:jeffersontuparanst@gmail.com",
+    url: "mailto:jeffersontuparan@gmail.com",
     label: "Email",
     hoverBg: "hover:bg-black/5 dark:hover:bg-white/10",
   },

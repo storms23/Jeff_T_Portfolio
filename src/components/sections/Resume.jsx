@@ -12,7 +12,7 @@ const RESUME_PROFILE = {
   name: "Jefferson C. Tuparan",
   title: "BSIT Student • Internship Candidate (QA / Web Dev / Cybersecurity)",
   location: "Valenzuela City",
-  email: "jeffersontuparanst@gmail.com",
+  email: "jeffersontuparan@gmail.com",
   phone: "09760529311",
   objective:
     "IT student seeking an internship in QA, web development, or cybersecurity to apply software development fundamentals and introductory offensive security concepts while gaining hands-on industry experience.",
