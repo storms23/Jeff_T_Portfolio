@@ -22,6 +22,13 @@ const CONTACT_INFO = {
   phone: "09760529311",
 };
 
+const EMAILJS_SERVICE_ID =
+  import.meta.env.VITE_EMAILJS_SERVICE_ID || "service_urnytf3";
+const EMAILJS_TEMPLATE_ID =
+  import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "template_txynxj4";
+const EMAILJS_PUBLIC_KEY =
+  import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "fwogvtryMu6G95Tlm";
+
 const Contact = () => {
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [showWelcomeModal, setShowWelcomeModal] = useState(false);
@@ -91,8 +98,8 @@ const Contact = () => {
     setSending(true);
     try {
       await emailjs.send(
-        "service_urnytf3",
-        "template_nczmged",
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
         {
           ...formData,
           title: "Portfolio Contact",
@@ -103,7 +110,7 @@ const Contact = () => {
           from_name: formData.name,
           from_email: formData.email,
         },
-        "fwogvtryMu6G95Tlm",
+        EMAILJS_PUBLIC_KEY,
       );
       setShowSuccessModal(true);
       setFormData({ name: "", email: "", message: "" });
