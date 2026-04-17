@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 
@@ -16,7 +16,7 @@ const Modal = ({
   buttonText,
   particles = 6,
 }) => {
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!isOpen) return;
     const prevOverflow = document.body.style.overflow;
     const prevPaddingRight = document.body.style.paddingRight;
