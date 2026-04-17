@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script>
+      (function () {
+        try {
+          var theme = localStorage.getItem("theme");
+          if (theme === "light") document.documentElement.classList.remove("dark");
+          else document.documentElement.classList.add("dark");
+        } catch (e) {
+          document.documentElement.classList.add("dark");
+        }
+      })();
+    </script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@600;700&family=Fira+Code:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- SEO Meta Tags -->
+    <title>Jefferson Tuparan</title>
+    <meta
+      name="description"
+      content="Portfolio of Jefferson Tuparan, a Full-Stack Developer specializing in React, Node.js, and modern web technologies. High Honor Graduate passionate about creating seamless user experiences."
+    />
+    <meta
+      name="keywords"
+      content="Jefferson Tuparan, Full-Stack Developer, React Developer, Node.js, Web Developer, Portfolio, JavaScript, HTML, CSS, Tailwind CSS, Software Engineer"
+    />
+    <meta name="author" content="Jefferson Tuparan" />
+
+    <!-- Open Graph Meta Tags (for Facebook, LinkedIn) -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Jefferson Tuparan - Full-Stack Developer Portfolio"
+    />
+    <meta
+      property="og:description"
+      content="Explore my portfolio showcasing modern web applications built with React, Node.js, and cutting-edge technologies. High Honor Graduate specializing in full-stack development."
+    />
+    <meta
+      property="og:image"
+      content="%BASE_URL%images/Profilepicture.jpg"
+    />
+    <meta property="og:site_name" content="Jefferson Tuparan Portfolio" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Jefferson Tuparan - Full-Stack Developer"
+    />
+    <meta
+      name="twitter:description"
+      content="Portfolio showcasing modern web applications and projects built with React, Node.js, and modern technologies"
+    />
+    <meta
+      name="twitter:image"
+      content="%BASE_URL%images/Profilepicture.jpg"
+    />
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#000000" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
