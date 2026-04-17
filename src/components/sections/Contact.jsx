@@ -27,7 +27,7 @@ const EMAILJS_SERVICE_ID =
 const EMAILJS_TEMPLATE_ID =
   import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "template_nczmged";
 const EMAILJS_PUBLIC_KEY =
-  import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "t3dJbuZlnbO8Y7ce0OhGh";
+  import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "ggnlqy-s0sZP8t5pf";
 
 const Contact = () => {
   const [showSuccessModal, setShowSuccessModal] = useState(false);
