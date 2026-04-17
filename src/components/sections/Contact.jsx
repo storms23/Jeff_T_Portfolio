@@ -23,11 +23,11 @@ const CONTACT_INFO = {
 };
 
 const EMAILJS_SERVICE_ID =
-  import.meta.env.VITE_EMAILJS_SERVICE_ID || "service_urnytf3";
+  import.meta.env.VITE_EMAILJS_SERVICE_ID || "service_qkm75vr";
 const EMAILJS_TEMPLATE_ID =
-  import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "template_txynxj4";
+  import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "template_nczmged";
 const EMAILJS_PUBLIC_KEY =
-  import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "fwogvtryMu6G95Tlm";
+  import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "t3dJbuZlnbO8Y7ce0OhGh";
 
 const Contact = () => {
   const [showSuccessModal, setShowSuccessModal] = useState(false);
