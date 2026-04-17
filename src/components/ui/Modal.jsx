@@ -19,9 +19,19 @@ const Modal = ({
   useEffect(() => {
     if (!isOpen) return;
     const prevOverflow = document.body.style.overflow;
+    const prevPaddingRight = document.body.style.paddingRight;
+
+    // Prevent layout shift/flicker when the scrollbar disappears.
+    const scrollbarWidth =
+      window.innerWidth - document.documentElement.clientWidth;
+    if (scrollbarWidth > 0) {
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+    }
+
     document.body.style.overflow = "hidden";
     return () => {
       document.body.style.overflow = prevOverflow;
+      document.body.style.paddingRight = prevPaddingRight;
     };
   }, [isOpen]);
 

@@ -25,11 +25,11 @@ const CONTACT_INFO = {
 const Contact = () => {
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [showWelcomeModal, setShowWelcomeModal] = useState(false);
-  const [hasShownWelcome, setHasShownWelcome] = useState(false);
   const [sending, setSending] = useState(false);
   const welcomeOpenTimeoutRef = useRef(null);
   const welcomeAutoCloseTimeoutRef = useRef(null);
   const hasScheduledWelcomeRef = useRef(false);
+  const hasShownWelcomeRef = useRef(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -37,7 +37,6 @@ const Contact = () => {
   });
 
   useEffect(() => {
-    if (hasShownWelcome) return;
     const section = document.getElementById("contact");
     if (!section) return;
 
@@ -46,12 +45,13 @@ const Contact = () => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
+          if (hasShownWelcomeRef.current) return;
           if (hasScheduledWelcomeRef.current) return;
           hasScheduledWelcomeRef.current = true;
           observer.disconnect();
           welcomeOpenTimeoutRef.current = window.setTimeout(() => {
             setShowWelcomeModal(true);
-            setHasShownWelcome(true);
+            hasShownWelcomeRef.current = true;
             welcomeAutoCloseTimeoutRef.current = window.setTimeout(
               () => setShowWelcomeModal(false),
               10000,
@@ -73,7 +73,7 @@ const Contact = () => {
         welcomeAutoCloseTimeoutRef.current = null;
       }
     };
-  }, [hasShownWelcome]);
+  }, []);
 
   const handleCloseWelcomeModal = () => {
     setShowWelcomeModal(false);
