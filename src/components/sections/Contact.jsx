@@ -44,33 +44,9 @@ const Contact = () => {
   });
 
   useEffect(() => {
-    const section = document.getElementById("contact");
-    if (!section) return;
-
-    hasScheduledWelcomeRef.current = false;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          if (hasShownWelcomeRef.current) return;
-          if (hasScheduledWelcomeRef.current) return;
-          hasScheduledWelcomeRef.current = true;
-          observer.disconnect();
-          welcomeOpenTimeoutRef.current = window.setTimeout(() => {
-            setShowWelcomeModal(true);
-            hasShownWelcomeRef.current = true;
-            welcomeAutoCloseTimeoutRef.current = window.setTimeout(
-              () => setShowWelcomeModal(false),
-              10000,
-            );
-          }, 1500);
-        }
-      },
-      { threshold: 0.2 },
-    );
-    observer.observe(section);
+    // The automatic intersection observer that triggered the welcome modal 
+    // has been removed to prevent scroll glitches and layout shifts.
     return () => {
-      observer.disconnect();
       if (welcomeOpenTimeoutRef.current) {
         clearTimeout(welcomeOpenTimeoutRef.current);
         welcomeOpenTimeoutRef.current = null;
@@ -134,7 +110,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="py-16 md:py-20 lg:py-24 bg-zinc-50 dark:bg-gray-950 relative overflow-x-clip"
+      className="py-16 md:py-20 lg:py-24 bg-zinc-50 dark:bg-gray-950 relative overflow-hidden"
     >
       <GridSubtle />
       <OrbsContact />

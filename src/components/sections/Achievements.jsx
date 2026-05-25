@@ -12,22 +12,22 @@ const Achievements = () => {
   const Row = ({ item }) => {
     const meta = [item.issuer, item.date, item.location].filter(Boolean).join(" • ");
     return (
-      <div className="px-4 sm:px-5 py-3.5 sm:py-4 flex gap-3">
-        <div className="w-9 flex-shrink-0 flex items-start justify-center pt-0.5">
-          <span className="text-lg" aria-hidden="true">
+      <div className="px-3 sm:px-4 py-2 sm:py-2.5 flex gap-3">
+        <div className="w-8 flex-shrink-0 flex items-start justify-center pt-0.5">
+          <span className="text-base md:text-lg" aria-hidden="true">
             {item.badge}
           </span>
         </div>
 
         <div className="min-w-0">
-          <p className="font-display text-sm md:text-base font-semibold text-zinc-900 dark:text-white leading-snug">
+          <p className="font-display text-sm md:text-base font-semibold text-zinc-900 dark:text-white leading-tight">
             {item.title}
           </p>
-          <p className="font-display text-xs md:text-sm text-zinc-600 dark:text-gray-400 leading-relaxed mt-0.5">
+          <p className="font-display text-xs text-zinc-600 dark:text-gray-400 leading-snug mt-0.5">
             {item.subtitle}
           </p>
           {meta && (
-            <p className="font-mono text-[10px] text-zinc-500 dark:text-gray-500 mt-1.5">
+            <p className="font-mono text-[10px] text-zinc-500 dark:text-gray-500 mt-1">
               {meta}
             </p>
           )}
@@ -59,7 +59,7 @@ const Achievements = () => {
           <div className="grid md:grid-cols-2 gap-4 md:gap-6">
             <div className="rounded-2xl bg-white dark:bg-white/[0.03] border border-black/10 dark:border-white/10 overflow-hidden">
               <div className="px-4 sm:px-5 py-3 border-b border-black/10 dark:border-white/10 bg-black/[0.02] dark:bg-white/[0.02]">
-                <p className="font-mono text-[10px] text-zinc-600 dark:text-gray-500 uppercase tracking-[0.2em]">
+                <p className="font-mono text-xs md:text-sm text-zinc-600 dark:text-gray-500 uppercase tracking-[0.2em]">
                   Achievements
                 </p>
               </div>
@@ -70,9 +70,9 @@ const Achievements = () => {
               </div>
             </div>
 
-            <div className="rounded-2xl bg-white dark:bg-white/[0.03] border border-black/10 dark:border-white/10 overflow-hidden">
-              <div className="px-4 sm:px-5 py-3 border-b border-black/10 dark:border-white/10 bg-black/[0.02] dark:bg-white/[0.02]">
-                <p className="font-mono text-[10px] text-zinc-600 dark:text-gray-500 uppercase tracking-[0.2em]">
+            <div className="rounded-2xl bg-white dark:bg-white/[0.03] border border-black/10 dark:border-white/10 overflow-hidden flex flex-col">
+              <div className="px-4 sm:px-5 py-3 border-b border-black/10 dark:border-white/10 bg-black/[0.02] dark:bg-white/[0.02] shrink-0">
+                <p className="font-mono text-xs md:text-sm text-zinc-600 dark:text-gray-500 uppercase tracking-[0.2em]">
                   Seminars
                 </p>
               </div>
@@ -81,6 +81,20 @@ const Achievements = () => {
                   <Row key={item.title} item={item} />
                 ))}
               </div>
+            </div>
+
+            <div className="md:col-span-2 rounded-2xl bg-white dark:bg-white/[0.03] border border-black/10 dark:border-white/10 overflow-hidden flex flex-col items-center justify-center py-8">
+              <img 
+                src="/images/AWS ENOVATOR LOGO.png" 
+                alt="AWS User Group e:Novators Philippines Logo" 
+                className="w-24 h-24 mb-4 object-contain transition-transform duration-300 ease-out hover:scale-110 hover:-rotate-3 drop-shadow-md cursor-pointer" 
+              />
+              <p className="font-display text-base md:text-lg font-semibold text-zinc-900 dark:text-white text-center px-4">
+                AWS User Group e:Novators Philippines
+              </p>
+              <p className="font-mono text-xs md:text-sm text-zinc-500 dark:text-gray-400 mt-2 uppercase tracking-widest text-center px-4">
+                Affiliation
+              </p>
             </div>
           </div>
         </motion.div>
