@@ -4,7 +4,7 @@ const MarqueeRow = ({ items, reverse = false }) => {
   const doubled = [...items, ...items];
   return (
     <div
-      className={`${reverse ? "marquee-track-reverse" : "marquee-track"} flex gap-2 sm:gap-3`}
+      className={`${reverse ? "marquee-track-reverse" : "marquee-track"} flex items-center gap-2 sm:gap-3 whitespace-nowrap`}
       style={{ width: "max-content" }}
     >
       {doubled.map((tech, i) => (

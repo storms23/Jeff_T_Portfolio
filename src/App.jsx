@@ -97,7 +97,7 @@ const App = () => {
   };
 
   return (
-    <div className="min-h-screen bg-zinc-50 text-zinc-900 dark:bg-gray-950 dark:text-white transition-colors duration-500 overflow-x-hidden">
+    <div className="theme-transition min-h-screen bg-zinc-50 text-zinc-900 dark:bg-gray-950 dark:text-white transition-colors duration-500 overflow-x-hidden">
       <PageLoadBar />
       <Navigation lenisRef={lenisRef} theme={theme} onToggleTheme={toggleTheme} />
       <main>

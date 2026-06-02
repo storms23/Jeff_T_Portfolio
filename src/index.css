@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700&family=Lexend:wght@500;600&family=Urbanist:wght@600;700&family=Sora:wght@600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700&family=Lexend:wght@500;600&family=Urbanist:wght@600;700&family=Sora:wght@600;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -19,7 +19,12 @@
     -webkit-overflow-scrolling: touch;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-display;
   }
 }
@@ -91,7 +96,7 @@ body::-webkit-scrollbar-corner,
 
 /* Focus styles */
 *:focus-visible {
-  outline: 2px solid #E4E4E7;
+  outline: 2px solid #e4e4e7;
   outline-offset: 2px;
 }
 
@@ -102,8 +107,13 @@ a:focus-visible {
 
 /* Gradient text animation */
 @keyframes gradient-shift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 .animate-gradient {
@@ -119,9 +129,57 @@ textarea:focus {
   -webkit-appearance: none;
 }
 
+/* Theme toggle — smooth color transitions */
+.theme-transition,
+.theme-transition *,
+.theme-transition *::before,
+.theme-transition *::after {
+  transition-property: background-color, color, border-color, fill, stroke;
+  transition-duration: 420ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Tools & Technologies strip — marquee */
+@keyframes marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes marquee-reverse {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.marquee-track {
+  animation: marquee 28s linear infinite;
+  will-change: transform;
+}
+
+.marquee-track-reverse {
+  animation: marquee-reverse 32s linear infinite;
+  will-change: transform;
+}
+
+@media (hover: hover) {
+  .marquee-track:hover,
+  .marquee-track-reverse:hover {
+    animation-play-state: paused;
+  }
+}
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -139,19 +197,30 @@ textarea:focus {
   position: relative;
   width: 100%;
   height: 1.5px;
-  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.28) 20%, rgba(255, 255, 255, 0.55) 50%, rgba(255, 255, 255, 0.28) 80%, transparent 100%);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.28) 20%,
+    rgba(255, 255, 255, 0.55) 50%,
+    rgba(255, 255, 255, 0.28) 80%,
+    transparent 100%
+  );
   opacity: 0.7;
 }
 
 .section-divider::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 200px;
   height: 200px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.18) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.18) 0%,
+    transparent 70%
+  );
   filter: blur(60px);
   pointer-events: none;
 }
@@ -192,7 +261,7 @@ a {
 }
 
 .btn-shine::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -75%;

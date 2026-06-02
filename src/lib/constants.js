@@ -49,16 +49,6 @@ export const GLOBAL_STYLE = `
   }
   .btn-shine:hover::before { left: 140%; }
 
-  @keyframes marquee         { 0% { transform: translateX(0); }    100% { transform: translateX(-50%); } }
-  @keyframes marquee-reverse { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); }    }
-
-  .marquee-track         { animation: marquee 28s linear infinite;         will-change: transform; }
-  .marquee-track-reverse { animation: marquee-reverse 32s linear infinite; will-change: transform; }
-
-  @media (hover: hover) {
-    .marquee-track:hover,
-    .marquee-track-reverse:hover { animation-play-state: paused; }
-  }
 
   .protected-img {
     -webkit-user-select: none;
