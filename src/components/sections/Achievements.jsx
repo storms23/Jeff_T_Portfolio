@@ -47,7 +47,7 @@ const Achievements = () => {
       <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-16 z-10 bg-gradient-to-t from-zinc-50 dark:from-gray-950 to-transparent" />
       <div className="max-w-7xl mx-auto px-4 sm:px-5 md:px-6 relative z-10">
         <motion.h2 {...fadeUp(0)} className={`${SECTION_HEADING} mb-3`}>
-          <span className={GRADIENT_TEXT}>Achievements &amp; Seminars</span>
+          <span className={GRADIENT_TEXT}>Ach ievements &amp; Seminars</span>
         </motion.h2>
         <motion.p
           {...fadeUp(0.05)}
