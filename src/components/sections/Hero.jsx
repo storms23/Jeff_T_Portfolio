@@ -77,7 +77,7 @@ const StatusBadges = () => (
       </div>
 
       <span className="font-mono text-zinc-700 dark:text-zinc-200 text-[10px] font-medium tracking-wide">
-        Open for Internship
+        Open for Employment
       </span>
     </div>
 
@@ -212,9 +212,9 @@ const Hero = ({ lenisRef }) => {
               transition={{ delay: 0.7 }}
               className="font-display text-sm md:text-base text-zinc-600 dark:text-gray-400 mb-8 max-w-xl leading-relaxed"
             >
-              BSIT student at Pamantasan ng Lungsod ng Valenzuela, seeking an
-              internship in QA, web development, or cybersecurity. I enjoy
-              building applications that are{" "}
+              Full-stack developer and BSIT student at Pamantasan ng Lungsod ng
+              Valenzuela, open to employment in web development or cybersecurity.
+              I enjoy building applications that are{" "}
               <span className="text-sm md:text-base">
                 <CodeTag>clean</CodeTag>
               </span>
@@ -237,14 +237,14 @@ const Hero = ({ lenisRef }) => {
             >
               <div className="rounded-2xl bg-white/70 dark:bg-gray-900/35 border border-black/10 dark:border-white/10 p-5">
                 <p className="font-mono text-[11px] text-zinc-500 dark:text-zinc-400 uppercase tracking-[0.2em] mb-3">
-                  // internship snapshot
+                  // developer snapshot
                 </p>
                 <ul className="space-y-2.5">
                   {[
-                    "Seeking internship opportunities in QA, web development, or cybersecurity",
-                    "Built responsive UIs with React + Tailwind and integrated REST APIs",
-                    "Familiar with web security fundamentals, basic reconnaissance, and introductory offensive concepts",
-                    "Comfortable with MySQL CRUD, debugging, and Git-based workflows",
+                    "Open to full-time employment in web development or cybersecurity",
+                    "Build full-stack apps with React, Next.js, Tailwind, and REST APIs",
+                    "Work with Node.js, PostgreSQL, Supabase, and Python-based data pipelines",
+                    "Apply web security fundamentals alongside debugging and Git workflows",
                   ].map((text) => (
                     <li key={text} className="flex items-start gap-2.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-black/20 dark:bg-white/30 shrink-0 mt-1.5" />
@@ -402,7 +402,7 @@ const Hero = ({ lenisRef }) => {
             transition={{ delay: 0.45 }}
             className="font-display text-sm sm:text-base text-zinc-600 dark:text-gray-400 leading-relaxed text-center max-w-md px-2"
           >
-            BSIT student seeking an internship in QA, web development, or
+            Full-stack developer open to employment in web development and
             cybersecurity. I enjoy building applications that are{" "}
             <span className="[&>*]:!text-xs sm:[&>*]:!text-sm">
               <CodeTag>clean</CodeTag>
@@ -426,14 +426,14 @@ const Hero = ({ lenisRef }) => {
           >
             <div className="rounded-2xl bg-white/70 dark:bg-gray-900/35 border border-black/10 dark:border-white/10 p-4">
               <p className="font-mono text-[10px] text-zinc-500 dark:text-zinc-400 uppercase tracking-[0.2em] mb-3 text-center">
-                // internship snapshot
+                // developer snapshot
               </p>
               <div className="space-y-2">
                 {[
-                  "Seeking internship in QA / Web Dev / Cybersecurity",
-                  "React + Tailwind UI, REST API integration",
-                  "Web security fundamentals (Burp Suite, Nmap)",
-                  "MySQL CRUD, debugging, Git workflows",
+                  "Open to employment in Web Dev / Cybersecurity",
+                  "React, Next.js, Tailwind, REST API integration",
+                  "Node.js, PostgreSQL, Supabase, Python ETL",
+                  "Web security, debugging, Git workflows",
                 ].map((text) => (
                   <div key={text} className="flex items-start gap-2.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-black/20 dark:bg-white/30 shrink-0 mt-1.5" />

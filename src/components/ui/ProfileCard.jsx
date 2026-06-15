@@ -85,10 +85,10 @@ const ProfileCard = ({
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="font-display text-white text-[10px] md:text-xs font-semibold tracking-wide leading-tight">
-                      Internship Candidate
+                      Full-Stack Developer
                     </p>
                     <p className="font-mono text-zinc-200 text-[8px] md:text-[10px] tracking-widest uppercase leading-tight mt-0.5">
-                      QA • Web Dev • Security
+                      Web • API • Security
                     </p>
                   </div>
                 </div>

@@ -15,7 +15,7 @@ const RESUME_PROFILE = {
   email: "jeffersontuparan@gmail.com",
   phone: "09760529311",
   objective:
-    "Full-Stack Developer seeking opportunities in web development or cybersecurity to apply expertise in software development, modern web technologies, and offensive security principles while gaining hands-on industry experience.",
+    "Full-Stack Developer seeking employment in web development or cybersecurity to apply expertise in software development, modern web technologies, and offensive security principles.",
 };
 
 const EDUCATION = {
@@ -43,7 +43,7 @@ const Resume = () => (
           <span className={GRADIENT_TEXT}>Resume</span>
         </h2>
         <p className="font-display text-xs sm:text-sm text-zinc-600 dark:text-gray-400 max-w-xl mx-auto leading-relaxed">
-          Internship-focused snapshot. Download the PDF for the full version.
+          Full-stack developer snapshot. Download the PDF for the full version.
         </p>
       </motion.div>
 

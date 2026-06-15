@@ -127,7 +127,7 @@ const Contact = () => {
           {...fadeUp(0.05)}
           className="font-display text-xs sm:text-sm text-center text-zinc-600 dark:text-gray-400 mb-6 md:mb-8"
         >
-          Looking for an internship candidate or want to collaborate? I'd love
+          Open to employment opportunities or want to collaborate? I'd love
           to hear from you!
         </motion.p>
         <div className="grid lg:grid-cols-2 gap-5 lg:gap-8 items-start w-full">
