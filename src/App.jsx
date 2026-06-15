@@ -4,7 +4,7 @@ import Footer from "./components/layout/Footer";
 import PageLoadBar from "./components/ui/PageLoadBar";
 import { Divider } from "./components/ui/Divider";
 import Hero from "./components/sections/Hero";
-import TechStrip from "./components/sections/TechStrip";
+import Skills from "./components/sections/Skills";
 import Projects from "./components/sections/Projects";
 import Achievements from "./components/sections/Achievements";
 import Resume from "./components/sections/Resume";
@@ -102,7 +102,7 @@ const App = () => {
       <Navigation lenisRef={lenisRef} theme={theme} onToggleTheme={toggleTheme} />
       <main>
         <Hero lenisRef={lenisRef} />
-        <TechStrip />
+        <Skills />
         <Divider />
         <Projects />
         <Divider />

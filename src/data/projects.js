@@ -13,6 +13,17 @@ export const PROJECTS = [
     gradient: "from-zinc-800 to-black",
   },
   {
+    title: "BoardMetrics PH",
+    subtitle: "Educational Analytics Platform",
+    description:
+      "A web-based educational analytics platform that converts PRC licensure examination results into a centralized, searchable database. Users can analyze school performance, rankings, historical trends, board exam statistics, and comparative insights.",
+    image: withBase("/images/Projects/Boardmetrics.PNG"),
+    liveUrl: "https://board-metrics-ph.vercel.app/",
+    githubUrl: "#",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Python"],
+    gradient: "from-zinc-800 to-black",
+  },
+  {
     title: "ARTA Feedback Survey System",
     subtitle: "Public Service Feedback Web App",
     description:

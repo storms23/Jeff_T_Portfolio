@@ -1,6 +1,18 @@
 export const ACHIEVEMENTS = [
   {
     kind: "achievement",
+    title: "1st Place — AWS AI Agentic Football Cup",
+    subtitle: "AI Agentic Competition",
+    issuer: "AWS User Group Philippines",
+    date: "June 16, 2026",
+    location: "Philippines",
+    image: "",
+    gradient: "from-amber-400 to-orange-500",
+    badge: "🥇",
+    highlight: true,
+  },
+  {
+    kind: "achievement",
     title: "2nd Place — Digital Game Category",
     subtitle: "Pamantasan ng Lungsod ng Valenzuela",
     issuer: "Pamantasan ng Lungsod ng Valenzuela",

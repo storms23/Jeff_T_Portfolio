@@ -110,7 +110,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="py-16 md:py-20 lg:py-24 bg-zinc-50 dark:bg-gray-950 relative overflow-hidden"
+      className="py-10 md:py-12 lg:py-14 bg-zinc-50 dark:bg-gray-950 relative overflow-hidden scroll-mt-20"
     >
       <GridSubtle />
       <OrbsContact />
@@ -119,21 +119,21 @@ const Contact = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-5 md:px-6 relative z-10">
         <motion.h2
           {...fadeUp(0)}
-          className={`${SECTION_HEADING} mb-5 md:mb-8 leading-tight`}
+          className={`${SECTION_HEADING} mb-3 md:mb-4 leading-tight`}
         >
           <span className={GRADIENT_TEXT}>Get In Touch</span>
         </motion.h2>
         <motion.p
           {...fadeUp(0.05)}
-          className="font-display text-xs sm:text-sm md:text-base text-center text-zinc-600 dark:text-gray-400 mb-10 md:mb-14"
+          className="font-display text-xs sm:text-sm text-center text-zinc-600 dark:text-gray-400 mb-6 md:mb-8"
         >
           Looking for an internship candidate or want to collaborate? I'd love
           to hear from you!
         </motion.p>
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start w-full">
-          <motion.div {...fadeUp(0.1)} className="space-y-5 w-full min-w-0">
+        <div className="grid lg:grid-cols-2 gap-5 lg:gap-8 items-start w-full">
+          <motion.div {...fadeUp(0.1)} className="space-y-4 w-full min-w-0">
             <div>
-              <div className="flex items-center gap-2 mb-5">
+              <div className="flex items-center gap-2 mb-3">
                 <div className="w-1 h-6 rounded-full bg-gradient-to-b from-zinc-900/60 to-zinc-500/40 dark:from-white/60 dark:to-zinc-400/40" />
                 <h3 className="font-display text-lg md:text-xl font-bold text-zinc-900 dark:text-white">
                   Contact Information
@@ -141,68 +141,68 @@ const Contact = () => {
               </div>
               <motion.div
                 {...fadeUp(0.15)}
-                className="rounded-2xl bg-black/35 border border-white/10 overflow-hidden shadow-xl"
+                className="rounded-2xl bg-white dark:bg-zinc-900/90 border border-black/10 dark:border-white/10 overflow-hidden shadow-lg dark:shadow-xl"
               >
-                <div className="flex items-center justify-between px-4 py-2.5 border-b border-white/10 bg-gray-900/40">
+                <div className="flex items-center justify-between px-4 py-2.5 border-b border-black/10 dark:border-white/10 bg-zinc-100 dark:bg-gray-900/40">
                   <div className="flex items-center gap-2">
-                    <span className="w-2.5 h-2.5 rounded-full bg-white/15" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-white/10" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-white/10" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-red-400/80 dark:bg-white/15" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-amber-400/80 dark:bg-white/10" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-400/80 dark:bg-white/10" />
                   </div>
-                  <p className="font-mono text-[10px] text-gray-500 tracking-wide">
+                  <p className="font-mono text-[10px] text-zinc-500 dark:text-gray-500 tracking-wide">
                     contact.terminal
                   </p>
                   <div className="w-10" />
                 </div>
 
-                <div className="p-4 sm:p-5">
-                  <div className="font-mono text-[11px] sm:text-xs text-gray-400">
+                <div className="p-3 sm:p-4">
+                  <div className="font-mono text-[11px] sm:text-xs text-zinc-500 dark:text-gray-400">
                     <div className="flex items-center gap-2">
-                      <span className="text-zinc-200">$</span>
-                      <span>whoami</span>
+                      <span className="text-emerald-600 dark:text-emerald-400">$</span>
+                      <span className="text-zinc-700 dark:text-gray-300">whoami</span>
                     </div>
-                    <div className="ml-5 mt-1 text-zinc-200">
+                    <div className="ml-5 mt-1 text-zinc-900 dark:text-zinc-200 font-medium">
                       {CONTACT_INFO.name}
                     </div>
 
                     <div className="flex items-center gap-2 mt-4">
-                      <span className="text-zinc-200">$</span>
-                      <span>cat contact.txt</span>
+                      <span className="text-emerald-600 dark:text-emerald-400">$</span>
+                      <span className="text-zinc-700 dark:text-gray-300">cat contact.txt</span>
                     </div>
 
                     <div className="mt-2 ml-5 space-y-2">
                       <div className="flex items-center gap-2 min-w-0">
-                        <span className="text-gray-500">email:</span>
+                        <span className="text-zinc-500 dark:text-gray-500">email:</span>
                         <a
                           href={`mailto:${CONTACT_INFO.email}`}
-                          className="text-zinc-200 hover:text-white transition-colors duration-150 truncate"
+                          className="text-zinc-900 dark:text-zinc-200 hover:text-zinc-700 dark:hover:text-white transition-colors duration-150 truncate"
                         >
                           {CONTACT_INFO.email}
                         </a>
                         <CopyEmailButton email={CONTACT_INFO.email} />
                       </div>
                       <div className="flex items-center gap-2 min-w-0">
-                        <span className="text-gray-500">github:</span>
+                        <span className="text-zinc-500 dark:text-gray-500">github:</span>
                         <a
                           href={CONTACT_INFO.github}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-zinc-200 hover:text-white transition-colors duration-150 truncate"
+                          className="text-zinc-900 dark:text-zinc-200 hover:text-zinc-700 dark:hover:text-white transition-colors duration-150 truncate"
                         >
                           {CONTACT_INFO.github.replace("https://", "")}
                         </a>
                       </div>
                       <div className="flex items-center gap-2 min-w-0">
-                        <span className="text-gray-500">location:</span>
-                        <span className="text-zinc-200 truncate">
+                        <span className="text-zinc-500 dark:text-gray-500">location:</span>
+                        <span className="text-zinc-900 dark:text-zinc-200 truncate">
                           {CONTACT_INFO.location}
                         </span>
                       </div>
                       <div className="flex items-center gap-2 min-w-0">
-                        <span className="text-gray-500">phone:</span>
+                        <span className="text-zinc-500 dark:text-gray-500">phone:</span>
                         <a
                           href={`tel:${CONTACT_INFO.phone.replace(/\s/g, "")}`}
-                          className="text-zinc-200 hover:text-white transition-colors duration-150 truncate"
+                          className="text-zinc-900 dark:text-zinc-200 hover:text-zinc-700 dark:hover:text-white transition-colors duration-150 truncate"
                         >
                           {CONTACT_INFO.phone}
                         </a>
@@ -238,8 +238,8 @@ const Contact = () => {
             </div>
           </motion.div>
           <motion.div {...fadeUp(0.15)} className="w-full min-w-0">
-            <div className="p-5 md:p-6 rounded-2xl bg-white/80 dark:bg-gray-900/50 border border-black/10 dark:border-white/10 shadow-xl w-full">
-              <form onSubmit={handleSubmit} className="space-y-4">
+            <div className="p-4 md:p-5 rounded-2xl bg-white/80 dark:bg-gray-900/50 border border-black/10 dark:border-white/10 shadow-xl w-full">
+              <form onSubmit={handleSubmit} className="space-y-3">
                 {[
                   {
                     name: "name",
@@ -279,7 +279,7 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     placeholder="Your Message"
-                    rows="5"
+                    rows="4"
                     className={`${inputClass} resize-none`}
                   />
                 </div>
