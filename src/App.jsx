@@ -6,6 +6,7 @@ import { Divider } from "./components/ui/Divider";
 import Hero from "./components/sections/Hero";
 import Skills from "./components/sections/Skills";
 import Projects from "./components/sections/Projects";
+import Experience from "./components/sections/Experience";
 import Achievements from "./components/sections/Achievements";
 import Resume from "./components/sections/Resume";
 import Contact from "./components/sections/Contact";
@@ -105,6 +106,8 @@ const App = () => {
         <Skills />
         <Divider />
         <Projects />
+        <Divider />
+        <Experience />
         <Divider />
         <Achievements />
         <Divider />

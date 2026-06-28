@@ -13,6 +13,17 @@ export const ACHIEVEMENTS = [
   },
   {
     kind: "achievement",
+    title: "1st Place — Code with Colors Ideathon",
+    subtitle: "Ideathon Competition",
+    issuer: "Code with Colors",
+    date: "2026",
+    location: "Philippines",
+    image: "",
+    gradient: "from-amber-400 to-orange-500",
+    badge: "🥇",
+  },
+  {
+    kind: "achievement",
     title: "2nd Place — Digital Game Category",
     subtitle: "Pamantasan ng Lungsod ng Valenzuela",
     issuer: "Pamantasan ng Lungsod ng Valenzuela",

@@ -28,7 +28,7 @@ const ProjectCard = ({ project, featured = false, mobileCarousel = false }) => {
     >
       {featured && (
         <div className="absolute top-3 left-3 z-10 px-2.5 py-0.5 bg-gradient-to-r from-zinc-900 to-zinc-700 text-white dark:from-white dark:to-zinc-200 dark:text-black text-[11px] font-bold rounded-full shadow-lg font-display tracking-wide border border-black/10 dark:border-white/20">
-          {project.title === "ValsKonnect" ? "Featured" : "New"}
+          Featured
         </div>
       )}
 
@@ -195,7 +195,7 @@ const Projects = () => {
               <ProjectCard
                 key={project.title}
                 project={project}
-                featured={i === 0 || i === 1}
+                featured={i === 0}
               />
             ))}
           </div>
@@ -227,7 +227,7 @@ const Projects = () => {
               <div className="w-full max-w-sm mx-auto sm:max-w-md">
                 <ProjectCard
                   project={PROJECTS[currentIndex]}
-                  featured={currentIndex === 0 || currentIndex === 1}
+                  featured={currentIndex === 0}
                   mobileCarousel={true}
                 />
               </div>

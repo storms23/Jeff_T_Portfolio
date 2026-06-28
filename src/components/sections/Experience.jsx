@@ -1,115 +1,96 @@
 import { motion } from "framer-motion";
 import { Briefcase, MapPin, Calendar } from "lucide-react";
-import { GridSubtle } from "../ui/Backgrounds";
+import { GridSubtle, OrbsResume } from "../ui/Backgrounds";
 import { SECTION_HEADING, GRADIENT_TEXT } from "../../lib/constants";
 import { fadeUp } from "../../lib/animations";
-
-const EXPERIENCE = [
-  {
-    company: "Pamantasan ng Lungsod ng Valenzuela",
-    role: "BSIT Student",
-    type: "Seeking Internship",
-    startDate: "2026",
-    endDate: "Present",
-    location: "Valenzuela City",
-    responsibilities: [
-      "Seeking internship opportunities in QA, web development, or cybersecurity",
-      "Built responsive UIs using React and Tailwind CSS and integrated REST APIs",
-      "Familiar with web security fundamentals, basic reconnaissance, and introductory offensive security concepts",
-      "Comfortable working with MySQL CRUD operations, debugging, and Git-based workflows",
-    ],
-    tags: [
-      "QA",
-      "React",
-      "Tailwind CSS",
-      "JavaScript",
-      "MySQL",
-      "Burp Suite",
-      "Nmap",
-      "Ubuntu/Linux",
-      "Git",
-    ],
-  },
-];
+import { EXPERIENCE } from "../../data/experience";
 
 const Experience = () => (
   <section
     id="experience"
-    className="py-20 md:py-28 lg:py-40 bg-black relative overflow-hidden"
+    className="py-12 md:py-14 lg:py-16 bg-white dark:bg-black relative overflow-hidden scroll-mt-20"
   >
     <GridSubtle />
-    <div className="pointer-events-none absolute top-0 left-0 right-0 h-16 z-10 bg-gradient-to-b from-black to-transparent" />
-    <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-16 z-10 bg-gradient-to-t from-black to-transparent" />
+    <OrbsResume />
+    <div className="pointer-events-none absolute top-0 left-0 right-0 h-16 z-10 bg-gradient-to-b from-white dark:from-black to-transparent" />
+    <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-16 z-10 bg-gradient-to-t from-white dark:from-black to-transparent" />
 
     <div className="max-w-4xl mx-auto px-4 sm:px-5 md:px-6 relative z-20">
-      <motion.div {...fadeUp(0)} className="text-center mb-10 md:mb-14">
-        <h2 className={`${SECTION_HEADING} mb-5 md:mb-8`}>
-          <span className={GRADIENT_TEXT}>Internship</span>
+      <motion.div {...fadeUp(0)} className="text-center mb-6 md:mb-8">
+        <h2 className={`${SECTION_HEADING} mb-3 md:mb-4`}>
+          <span className={GRADIENT_TEXT}>Experience</span>
         </h2>
-        <p className="font-display text-xs sm:text-sm md:text-base text-gray-400 max-w-xl mx-auto leading-relaxed">
-          What I'm looking for and what I bring to a team.
+        <p className="font-display text-xs sm:text-sm text-zinc-600 dark:text-gray-400 max-w-xl mx-auto leading-relaxed">
+          Professional roles, freelance work, and community involvement.
         </p>
       </motion.div>
 
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-4 md:gap-5">
         {EXPERIENCE.map((exp, i) => (
           <motion.div
-            key={i}
-            {...fadeUp(i * 0.1)}
-            className="p-5 md:p-7 rounded-2xl bg-gray-800/40 border border-white/10 text-left"
+            key={exp.company + exp.role}
+            {...fadeUp(0.08 + i * 0.06)}
+            className="p-4 md:p-5 rounded-2xl bg-zinc-50/90 dark:bg-white/[0.03] border border-black/10 dark:border-white/10 text-left shadow-sm dark:shadow-none"
           >
-            {/* Header */}
-            <div className="flex items-start justify-between gap-4 mb-4">
-              <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
-                  <Briefcase size={16} className="text-zinc-200" />
+            <div className="flex items-start justify-between gap-4 mb-3">
+              <div className="flex items-center gap-3 min-w-0">
+                <div className="w-10 h-10 rounded-xl bg-white dark:bg-white/5 border border-black/10 dark:border-white/10 flex items-center justify-center shrink-0 overflow-hidden">
+                  {exp.logo ? (
+                    <img
+                      src={exp.logo}
+                      alt={`${exp.company} logo`}
+                      className="w-7 h-7 object-contain"
+                    />
+                  ) : (
+                    <Briefcase
+                      size={16}
+                      className="text-zinc-700 dark:text-zinc-200"
+                    />
+                  )}
                 </div>
-                <div>
-                  <h3 className="font-display font-bold text-white text-sm md:text-base">
+                <div className="min-w-0">
+                  <h3 className="font-display font-bold text-zinc-900 dark:text-white text-sm md:text-base leading-tight">
                     {exp.role}
                   </h3>
-                  <p className="font-display text-zinc-200 text-xs md:text-sm font-semibold mt-0.5">
+                  <p className="font-display text-zinc-700 dark:text-zinc-200 text-xs md:text-sm font-semibold mt-0.5">
                     {exp.company}
                   </p>
                 </div>
               </div>
-              <span className="shrink-0 text-xs font-display text-gray-400 bg-white/5 border border-white/10 px-3 py-1 rounded-full">
+              <span className="shrink-0 text-[10px] md:text-xs font-display text-zinc-600 dark:text-gray-400 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 px-2.5 py-1 rounded-full">
                 {exp.type}
               </span>
             </div>
 
-            {/* Meta */}
-            <div className="flex flex-wrap gap-4 mb-4 ml-12">
-              <div className="flex items-center gap-1.5 text-gray-400 text-xs">
+            <div className="flex flex-wrap gap-3 md:gap-4 mb-3 ml-[52px]">
+              <div className="flex items-center gap-1.5 text-zinc-500 dark:text-gray-400 text-xs">
                 <Calendar size={13} />
                 <span className="font-display">
                   {exp.startDate} — {exp.endDate}
                 </span>
               </div>
-              <div className="flex items-center gap-1.5 text-gray-400 text-xs">
+              <div className="flex items-center gap-1.5 text-zinc-500 dark:text-gray-400 text-xs">
                 <MapPin size={13} />
                 <span className="font-display">{exp.location}</span>
               </div>
             </div>
 
-            {/* Responsibilities */}
-            <ul className="space-y-2.5 mb-5 ml-12">
-              {exp.responsibilities.map((r, j) => (
-                <li key={j} className="flex items-start gap-2.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-white/30 shrink-0 mt-1.5" />
-                  <span className="font-display text-gray-300 text-xs md:text-sm leading-relaxed">
-                    {r}
+            <ul className="space-y-2 mb-4 ml-[52px]">
+              {exp.responsibilities.map((item) => (
+                <li key={item} className="flex items-start gap-2.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-zinc-400 dark:bg-white/30 shrink-0 mt-1.5" />
+                  <span className="font-display text-zinc-600 dark:text-gray-300 text-xs md:text-sm leading-relaxed">
+                    {item}
                   </span>
                 </li>
               ))}
             </ul>
 
-            {/* Tags */}
-            <div className="flex flex-wrap gap-2 ml-12">
+            <div className="flex flex-wrap gap-1.5 ml-[52px]">
               {exp.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="font-display text-xs text-zinc-200 bg-white/5 border border-white/10 px-3 py-1 rounded-full"
+                  className="font-display text-[11px] text-zinc-700 dark:text-zinc-200 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 px-2.5 py-0.5 rounded-full"
                 >
                   {tag}
                 </span>

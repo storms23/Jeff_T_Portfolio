@@ -2,6 +2,17 @@ const withBase = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\//, "")
 
 export const PROJECTS = [
   {
+    title: "Nike Sneaker",
+    subtitle: "Product Landing Page",
+    description:
+      "A high-fidelity Nike Air More Uptempo landing page with a dark, premium layout. Features interactive size selection, product storytelling sections, and a scroll-driven showcase built for a polished e-commerce experience.",
+    image: withBase("/images/Projects/Nike.PNG"),
+    liveUrl: "https://nike-two-phi.vercel.app/",
+    githubUrl: "#",
+    tags: ["React", "Tailwind CSS", "JavaScript", "Vercel"],
+    gradient: "from-zinc-800 to-black",
+  },
+  {
     title: "ValsKonnect",
     subtitle: "Web-Based Citizen Services Platform",
     description:
@@ -11,6 +22,17 @@ export const PROJECTS = [
     githubUrl: "#",
     tags: ["React", "Tailwind CSS", "JavaScript", "REST API"],
     gradient: "from-zinc-800 to-black",
+  },
+  {
+    title: "Serviam Church Choir",
+    subtitle: "Church Choir Website",
+    description:
+      "A responsive website for Serviam Church Choir showcasing mission, vision, and worship performances. Includes a hero section, performance gallery with video links, and contact pages for church event inquiries.",
+    image: withBase("/images/Projects/Serviam.PNG"),
+    liveUrl: "https://serviam-church.vercel.app/",
+    githubUrl: "#",
+    tags: ["React", "Tailwind CSS", "JavaScript", "Vercel"],
+    gradient: "from-zinc-800 to-zinc-950",
   },
   {
     title: "BoardMetrics PH",
