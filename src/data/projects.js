@@ -13,6 +13,17 @@ export const PROJECTS = [
     gradient: "from-zinc-800 to-black",
   },
   {
+    title: "firstur",
+    subtitle: "Fragrance E-Commerce Landing Page",
+    description:
+      "A minimalist fragrance storefront landing page with elegant serif typography, hero product showcases, and shop-focused sections for perfumes, brands, and curated guides.",
+    image: withBase("/images/Projects/Firstur.PNG"),
+    liveUrl: "#",
+    githubUrl: "#",
+    tags: ["React", "Tailwind CSS", "JavaScript", "UI/UX"],
+    gradient: "from-zinc-800 to-zinc-950",
+  },
+  {
     title: "ValsKonnect",
     subtitle: "Web-Based Citizen Services Platform",
     description:

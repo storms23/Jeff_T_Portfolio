@@ -104,7 +104,7 @@ const StatusBadges = () => (
 const StatsRow = ({ textSize = "text-xl" }) => (
   <div className="flex items-center gap-0 divide-x divide-black/10 dark:divide-white/10">
     {[
-      { value: 7, suffix: "", label: "Projects" },
+      { value: 8, suffix: "", label: "Projects" },
       { value: 7, suffix: "", label: "Seminars" },
       { value: 5, suffix: "", label: "Awards" },
     ].map(({ value, suffix, label }) => (
