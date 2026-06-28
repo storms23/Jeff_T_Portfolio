@@ -103,9 +103,9 @@ const App = () => {
       <Navigation lenisRef={lenisRef} theme={theme} onToggleTheme={toggleTheme} />
       <main>
         <Hero lenisRef={lenisRef} />
-        <Skills />
-        <Divider />
         <Projects />
+        <Divider />
+        <Skills />
         <Divider />
         <Experience />
         <Divider />
