@@ -343,8 +343,8 @@ const Hero = ({ lenisRef }) => {
                   <ProfileCard
                     size="lg"
                     initials="JT"
-                    image={`${import.meta.env.BASE_URL}images/Profilepicture.jpg`}
-                    objectPosition="object-[50%_25%]"
+                    image={`${import.meta.env.BASE_URL}images/Profilepicture.png`}
+                    objectPosition="object-center"
                   />
                 </div>
               </div>
@@ -390,8 +390,8 @@ const Hero = ({ lenisRef }) => {
             <ProfileCard
               size="sm"
               initials="JT"
-              image={`${import.meta.env.BASE_URL}images/Profilepicture.jpg`}
-              objectPosition="object-[50%_25%]"
+              image={`${import.meta.env.BASE_URL}images/Profilepicture.png`}
+              objectPosition="object-center"
             />
           </motion.div>
 
